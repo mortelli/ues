@@ -49,19 +49,22 @@ export function translateNumber(inputNumber: number): string {
       let rem = translate(n % 10);
       word = below_hundred[(n - (n % 10)) / 10 - 2] + ' ' + rem;
     } else if (n < 1000) {
-      word = single_digit[Math.trunc(n / 100)] + ' Cien ' + translate(n % 100);
+      word =
+        single_digit[Math.trunc(n / 100)] + ' Hundred ' + translate(n % 100);
     } else if (n < 1000000) {
       word =
-        translate(Math.floor(n / 1000)).trim() + ' Mil ' + translate(n % 1000);
+        translate(Math.floor(n / 1000)).trim() +
+        ' Thousand ' +
+        translate(n % 1000);
     } else if (n < 1000000000) {
       word =
         translate(Math.floor(n / 1000000)).trim() +
-        ' Millon ' +
+        ' Million ' +
         translate(n % 1000000);
     } else {
       word =
         translate(Math.floor(n / 1000000000)).trim() +
-        ' Mil millon ' +
+        ' Billion ' +
         translate(n % 1000000000);
     }
     return word;
