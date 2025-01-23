@@ -40,7 +40,7 @@ export function translateNumber(n: number): string {
     'Ninety',
   ];
 
-  if (n === 0) return 'Zeroo';
+  if (n === 0) return 'Zero';
 
   // Recursive function to translate the number into words
   function translate(n: number) {

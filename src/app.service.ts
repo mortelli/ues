@@ -1,5 +1,6 @@
 import { Injectable } from '@nestjs/common';
-import { trimText } from './utils/utils';
+import { translateNumber } from './utils/numberUtils';
+import { trimText } from './utils/textUtils';
 
 @Injectable()
 export class AppService {
@@ -9,6 +10,14 @@ export class AppService {
 
   toUpperCase(inputText: string): string {
     const trimmedText = trimText(inputText);
-    return trimmedText.toLocaleUpperCase();
+    let partialSolution = '';
+    trimmedText.split(' ').forEach((word) => {
+      let newWord = word;
+      if (!isNaN(Number(word))) {
+        newWord = translateNumber(Number(word));
+      }
+      partialSolution += ' ' + newWord;
+    });
+    return partialSolution.toLocaleUpperCase();
   }
 }
