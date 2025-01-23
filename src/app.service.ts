@@ -6,8 +6,7 @@ export class AppService {
     return 'Hello World!';
   }
 
-  toUpperCase(text: string): string {
-    // TODO: implement
-    return '';
+  toUpperCase(inputText: string): string {
+    return inputText.toUpperCase();
   }
 }
