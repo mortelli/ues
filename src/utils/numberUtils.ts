@@ -3,40 +3,40 @@ export function translateNumber(inputNumber: number): string {
   // Arrays to hold words for single-digit, double-digit, and below-hundred numbers
   const single_digit = [
     '',
-    'Uno',
-    'Dos',
-    'Tres',
-    'Cuatro',
-    'Cinco',
-    'Seis',
-    'Siete',
-    'Ocho',
-    'Nueve',
+    'One',
+    'Two',
+    'Three',
+    'Four',
+    'Five',
+    'Six',
+    'Seven',
+    'Eight',
+    'Nine',
   ];
   const double_digit = [
-    'Diez',
-    'Once',
-    'Doce',
-    'Trece',
-    'Catorce',
-    'Quince',
-    'Dieciseis',
-    'Diecisiete',
-    'Dieciocho',
-    'Diecinueve',
+    'Ten',
+    'Eleven',
+    'Twelve',
+    'Thirteen',
+    'Fourteen',
+    'Fifteen',
+    'Sixteen',
+    'Seventeen',
+    'Eighteen',
+    'Nineteen',
   ];
   const below_hundred = [
-    'Veinte',
-    'Treinta',
-    'Cuarenta',
-    'Cincuenta',
-    'Sesenta',
-    'Setenta',
-    'Ochenta',
-    'Noventa',
+    'Twenty',
+    'Thirty',
+    'Forty',
+    'Fifty',
+    'Sixty',
+    'Seventy',
+    'Eighty',
+    'Ninety',
   ];
 
-  if (inputNumber === 0) return 'Cero';
+  if (inputNumber === 0) return 'Zero';
 
   // Recursive function to translate the number into words
   function translate(n: number) {
