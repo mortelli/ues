@@ -1,5 +1,5 @@
 // source: https://www.w3resource.com/javascript-exercises/javascript-math-exercise-105.php
-export function translateNumber(n: number): string {
+export function translateNumber(inputNumber: number): string {
   // Arrays to hold words for single-digit, double-digit, and below-hundred numbers
   const single_digit = [
     '',
@@ -36,7 +36,7 @@ export function translateNumber(n: number): string {
     'Ninety',
   ];
 
-  if (n === 0) return 'Zero';
+  if (inputNumber === 0) return 'Zero';
 
   // Recursive function to translate the number into words
   function translate(n: number) {
@@ -71,6 +71,6 @@ export function translateNumber(n: number): string {
   }
 
   // Get the result by translating the given number
-  let result = translate(n);
+  let result = translate(inputNumber);
   return result.trim();
 }
