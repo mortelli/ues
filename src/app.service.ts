@@ -1,4 +1,5 @@
 import { Injectable } from '@nestjs/common';
+import { trimText } from './utils/utils';
 
 @Injectable()
 export class AppService {
@@ -6,12 +7,8 @@ export class AppService {
     return 'Hello World!';
   }
 
-  trimText(inputText: string): string {
-    return inputText.trim();
-  }
-
   toUpperCase(inputText: string): string {
-    const trimmedText = this.trimText(inputText);
+    const trimmedText = trimText(inputText);
     return trimmedText.toLocaleUpperCase();
   }
 }
