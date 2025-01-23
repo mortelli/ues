@@ -6,12 +6,12 @@ export class AppService {
     return 'Hello World!';
   }
 
-  trimText(text: string): string {
-    return text.trim();
+  trimText(inputText: string): string {
+    return inputText.trim();
   }
 
   toUpperCase(inputText: string): string {
     const trimmedText = this.trimText(inputText);
-    return trimmedText.toLocaleLowerCase();
+    return trimmedText.toLocaleUpperCase();
   }
 }
