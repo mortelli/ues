@@ -1,7 +1,3 @@
-export function trimText(inputText: string): string {
-  return inputText.trim();
-}
-
 // source: https://www.w3resource.com/javascript-exercises/javascript-math-exercise-105.php
 export function translateNumber(n: number): string {
   // Arrays to hold words for single-digit, double-digit, and below-hundred numbers
@@ -40,7 +36,7 @@ export function translateNumber(n: number): string {
     'Ninety',
   ];
 
-  if (n === 0) return 'Zeroo';
+  if (n === 0) return 'Zero';
 
   // Recursive function to translate the number into words
   function translate(n: number) {
