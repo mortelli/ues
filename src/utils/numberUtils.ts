@@ -50,21 +50,21 @@ export function translateNumber(inputNumber: number): string {
       word = below_hundred[(n - (n % 10)) / 10 - 2] + ' ' + rem;
     } else if (n < 1000) {
       word =
-        single_digit[Math.trunc(n / 100)] + ' Hundred ' + translate(n % 100);
+        single_digit[Math.trunc(n / 100)] + ' Cien(to) ' + translate(n % 100);
     } else if (n < 1000000) {
       word =
         translate(Math.floor(n / 1000)).trim() +
-        ' Thousand ' +
+        ' Mil(es) ' +
         translate(n % 1000);
     } else if (n < 1000000000) {
       word =
         translate(Math.floor(n / 1000000)).trim() +
-        ' Million ' +
+        ' Millon(es) ' +
         translate(n % 1000000);
     } else {
       word =
         translate(Math.floor(n / 1000000000)).trim() +
-        ' Billion ' +
+        ' Mil millon(es) ' +
         translate(n % 1000000000);
     }
     return word;
