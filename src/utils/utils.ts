@@ -56,13 +56,18 @@ export function translateNumber(n: number): string {
       word =
         single_digit[Math.trunc(n / 100)] + ' Hundred ' + translate(n % 100);
     } else if (n < 1000000) {
-      word = translate(n / 1000).trim() + ' Thousand ' + translate(n % 1000);
+      word =
+        translate(Math.floor(n / 1000)).trim() +
+        ' Thousand ' +
+        translate(n % 1000);
     } else if (n < 1000000000) {
       word =
-        translate(n / 1000000).trim() + ' Million ' + translate(n % 1000000);
+        translate(Math.floor(n / 1000000)).trim() +
+        ' Million ' +
+        translate(n % 1000000);
     } else {
       word =
-        translate(n / 1000000000).trim() +
+        translate(Math.floor(n / 1000000000)).trim() +
         ' Billion ' +
         translate(n % 1000000000);
     }
