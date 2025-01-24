@@ -1,4 +1,5 @@
 import { Injectable } from '@nestjs/common';
+import { shuffle } from './utils/arrayUtils';
 import { translateNumber } from './utils/numberUtils';
 import { trimText } from './utils/textUtils';
 
@@ -19,5 +20,9 @@ export class AppService {
       partialSolution += ' ' + newWord;
     });
     return partialSolution.toLocaleUpperCase();
+  }
+
+  shuffle(inputList: Array<number>): Array<number> {
+    return shuffle(inputList);
   }
 }
