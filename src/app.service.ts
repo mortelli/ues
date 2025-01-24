@@ -1,6 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { translateNumber } from './utils/numberUtils';
-import { trimText } from './utils/textUtils';
+import { translateNumber, trimText } from './utils/utils';
 
 @Injectable()
 export class AppService {
