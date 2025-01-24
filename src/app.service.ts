@@ -26,11 +26,11 @@ export class AppService {
     return shuffle(inputList);
   }
 
-  reverse(inputList: Array<number>): Array<number> {
-    return reverse(inputList);
-  }
-
   concat(inputList1: Array<number>, inputList2: Array<number>): Array<number> {
     return concat(inputList1, inputList2);
+  }
+
+  reverse(inputList: Array<number>): Array<number> {
+    return reverse(inputList);
   }
 }

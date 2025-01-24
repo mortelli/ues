@@ -21,13 +21,13 @@ export class AppController {
     return this.appService.shuffle(body.list);
   }
 
-  @Post('/reverse')
-  reverse(@Body() body) {
-    return this.appService.reverse(body.list);
-  }
-
   @Post('/concat')
   concat(@Body() body) {
     return this.appService.concat(body.list1, body.list2);
+  }
+
+  @Post('/reverse')
+  reverse(@Body() body) {
+    return this.appService.reverse(body.list);
   }
 }

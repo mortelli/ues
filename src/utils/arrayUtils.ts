@@ -1,7 +1,3 @@
-export function concat(array1: Array<number>, array2: Array<number>) {
-  return array1.concat(array2);
-}
-
 // https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
 export function shuffle(array: Array<number>) {
   let currentIndex = array.length;
@@ -20,6 +16,10 @@ export function shuffle(array: Array<number>) {
   }
 
   return array;
+}
+
+export function concat(array1: Array<number>, array2: Array<number>) {
+  return array1.concat(array2);
 }
 
 // https://stackoverflow.com/questions/10168034/how-can-i-reverse-an-array-in-javascript-without-using-libraries
