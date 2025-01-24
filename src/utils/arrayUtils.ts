@@ -1,3 +1,7 @@
+export function concat(array1: Array<number>, array2: Array<number>) {
+  return array1.concat(array2);
+}
+
 // https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
 export function shuffle(array: Array<number>) {
   let currentIndex = array.length;
