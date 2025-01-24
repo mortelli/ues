@@ -15,4 +15,9 @@ export class AppController {
     const input = body.text;
     return this.appService.toUpperCase(input);
   }
+
+  @Post('/shuffle')
+  shuffle(@Body() body) {
+    return this.appService.shuffle(body.list);
+  }
 }
