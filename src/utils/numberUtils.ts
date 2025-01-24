@@ -1,7 +1,7 @@
 // source: https://www.w3resource.com/javascript-exercises/javascript-math-exercise-105.php
 export function translateNumber(inputNumber: number): string {
   // Arrays to hold words for single-digit, double-digit, and below-hundred numbers
-  const single_digit = [
+  const singleDigits = [
     '',
     'One',
     'Two',
@@ -13,7 +13,7 @@ export function translateNumber(inputNumber: number): string {
     'Eight',
     'Nine',
   ];
-  const double_digit = [
+  const doubleDigits = [
     'Ten',
     'Eleven',
     'Twelve',
@@ -25,7 +25,7 @@ export function translateNumber(inputNumber: number): string {
     'Eighteen',
     'Nineteen',
   ];
-  const below_hundred = [
+  const belowOneHundred = [
     'Twenty',
     'Thirty',
     'Forty',
@@ -40,37 +40,39 @@ export function translateNumber(inputNumber: number): string {
 
   // Recursive function to translate the number into words
   function translate(n: number) {
-    let word = '';
     if (n < 10) {
-      word = single_digit[n] + ' ';
+      return singleDigits[n] + ' ';
     } else if (n < 20) {
-      word = double_digit[n - 10] + ' ';
+      return doubleDigits[n - 10] + ' ';
     } else if (n < 100) {
-      let rem = translate(n % 10);
-      word = below_hundred[(n - (n % 10)) / 10 - 2] + ' ' + rem;
+      const rem = translate(n % 10);
+      return belowOneHundred[(n - (n % 10)) / 10 - 2] + ' ' + rem;
     } else if (n < 1000) {
-      word =
-        single_digit[Math.trunc(n / 100)] + ' Hundred ' + translate(n % 100);
+      return (
+        singleDigits[Math.trunc(n / 100)] + ' Hundred ' + translate(n % 100)
+      );
     } else if (n < 1000000) {
-      word =
+      return (
         translate(Math.floor(n / 1000)).trim() +
         ' Thousand ' +
-        translate(n % 1000);
+        translate(n % 1000)
+      );
     } else if (n < 1000000000) {
-      word =
+      return (
         translate(Math.floor(n / 1000000)).trim() +
         ' Million ' +
-        translate(n % 1000000);
+        translate(n % 1000000)
+      );
     } else {
-      word =
+      return (
         translate(Math.floor(n / 1000000000)).trim() +
         ' Billion ' +
-        translate(n % 1000000000);
+        translate(n % 1000000000)
+      );
     }
-    return word;
   }
 
   // Get the result by translating the given number
-  let result = translate(inputNumber);
+  const result = translate(inputNumber);
   return result.trim();
 }
