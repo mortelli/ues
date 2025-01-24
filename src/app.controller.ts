@@ -20,4 +20,9 @@ export class AppController {
   shuffle(@Body() body) {
     return this.appService.shuffle(body.list);
   }
+
+  @Post('/reverse')
+  reverse(@Body() body) {
+    return this.appService.reverse(body.list);
+  }
 }
