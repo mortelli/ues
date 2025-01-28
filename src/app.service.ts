@@ -12,6 +12,6 @@ export class AppService {
 
   toUpperCase(text: string): string {
     const trimmedText = this.trimText(text);
-    return trimmedText.toLocaleLowerCase();
+    return trimmedText.toLocaleUpperCase();
   }
 }
