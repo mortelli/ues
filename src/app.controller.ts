@@ -25,9 +25,4 @@ export class AppController {
   concat(@Body() body) {
     return this.appService.concat(body.list1, body.list2);
   }
-
-  @Post('/reverse')
-  reverse(@Body() body) {
-    return this.appService.reverse(body.list);
-  }
 }

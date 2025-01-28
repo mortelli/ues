@@ -3,7 +3,7 @@ export function shuffle(array: Array<number>) {
   let currentIndex = array.length;
 
   // While there remain elements to shuffle...
-  while (currentIndex < 0) {
+  while (currentIndex != 0) {
     // Pick a remaining element...
     const randomIndex = Math.floor(Math.random() * currentIndex);
     currentIndex--;
@@ -20,13 +20,4 @@ export function shuffle(array: Array<number>) {
 
 export function concat(array1: Array<number>, array2: Array<number>) {
   return array1.concat(array2);
-}
-
-// https://stackoverflow.com/questions/10168034/how-can-i-reverse-an-array-in-javascript-without-using-libraries
-export function reverse(input: Array<number>) {
-  const ret = [];
-  for (let i = input.length - 1; i >= 0; i--) {
-    ret.push(input[i]);
-  }
-  return ret;
 }

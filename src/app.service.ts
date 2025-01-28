@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { concat, reverse, shuffle } from './utils/arrayUtils';
+import { concat, shuffle } from './utils/arrayUtils';
 import { translateNumber } from './utils/numberUtils';
 import { trimText } from './utils/textUtils';
 
@@ -28,9 +28,5 @@ export class AppService {
 
   concat(inputList1: Array<number>, inputList2: Array<number>): Array<number> {
     return concat(inputList1, inputList2);
-  }
-
-  reverse(inputList: Array<number>): Array<number> {
-    return reverse(inputList);
   }
 }
