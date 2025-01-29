@@ -29,4 +29,38 @@ export class AppService {
   concat(inputList1: Array<number>, inputList2: Array<number>): Array<number> {
     return concat(inputList1, inputList2);
   }
+
+  fetchResource(url: string): string {
+    const url2 = trimText(url);
+    const urlPattern = new RegExp(
+      '^(https?:\\/\\/)?' + // validate protocol
+        '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|' + // validate domain name
+        '((\\d{1,3}\\.){3}\\d{1,3}))' + // validate OR ip (v4) address
+        '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*' + // validate port and path
+        '(\\?[;&a-z\\d%_.~+=-]*)?' + // validate query string
+        '(\\#[-a-z\\d_]*)?$',
+      'i',
+    ); // validate fragment locator
+    const validUrl = !!urlPattern.test(url2);
+
+    if (validUrl) {
+      // const xhr = new XMLHttpRequest();
+      // xhr.open('GET', url2);
+      // xhr.onload = () => console.log(JSON.parse(xhr.responseText));
+      // xhr.send();
+
+      fetch(url)
+        .then((response) => {
+          if (response.ok) {
+          return response.json();
+          }
+          throw new Error();
+        })
+        .then((responseJson) => {
+        console.log('json response is', responseJson);
+        return responseJson;
+        });
+    }
+    return '';
+  }
 }
